@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "44e44a26-1c53-4119-a432-56eee331db3f",
+		"name": "Pruebas app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47463812",
+		"_collection_link": "https://esccel21-7041326.postman.co/workspace/felix_ed's-Workspace~774ab4a5-bfd0-4a47-82ea-ad314624dfd3/collection/47463812-44e44a26-1c53-4119-a432-56eee331db3f?action=share&source=collection_link&creator=47463812"
+	},
+	"item": [
+		{
+			"name": "new courier",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"felixfelix1\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"fe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/courier",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "server status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/ping",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "metro station search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/stations/search?s=Del",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						"search"
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "Del"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "courier login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"felix\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/courier/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete courier",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"feli\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/courier/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a specific order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/orders/track?t=631226",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"track"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "631226"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel an order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"track\": 997122\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/orders/cancel",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accept an order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/orders/accept/631226?courierId=3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"accept",
+						"631226"
+					],
+					"query": [
+						{
+							"key": "courierId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create an order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Goku555\",\r\n    \"lastName\": \"Ro\",\r\n    \"address\": \"Kame house, 111 apt.\",\r\n    \"metroStation\": 5,\r\n    \"phone\": \"+7 800 355 35 55\",\r\n    \"rentTime\": 5,\r\n    \"deliveryDate\": \"2020-06-06\",\r\n    \"comment\": \"Saske, come back to Konoha\",\r\n    \"color\": [\r\n        \"BLACK\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
